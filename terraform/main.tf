@@ -55,9 +55,9 @@ module "Security" {
 # Module for Autoscaling Groups and Launch Templates
 module "Autoscaling" {
   source           = "./modules/Autoscaling"
-  ami-web          = var.ami
-  ami-bastion      = var.ami
-  ami-nginx        = var.ami
+  ami-web          = var.ami-web
+  ami-bastion      = var.ami-bastion
+  ami-nginx        = var.ami-nginx
   desired_capacity = 2
   max_size         = 2
   min_size         = 2
@@ -97,9 +97,9 @@ module "RDS" {
 # The Module creates instances for jenkins, sonarqube abd jfrog
 module "compute" {
   source          = "./modules/compute"
-  ami-jenkins     = var.ami
-  ami-sonar       = var.ami
-  ami-jfrog       = var.ami
+  ami-jenkins     = var.ami-bastion
+  ami-sonar       = var.ami-sonar
+  ami-jfrog       = var.ami-bastion
   subnets-compute = module.VPC.public_subnets-1
   sg-compute      = [module.Security.Ext-ALB-sg]
   keypair         = var.keypair

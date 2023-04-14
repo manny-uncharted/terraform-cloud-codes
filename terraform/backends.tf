@@ -45,3 +45,14 @@ data "aws_s3_bucket" "terraform_state" {
 #     encrypt        = true
 #   }
 # }
+
+
+terraform {
+  backend "remote" {
+    organization = "pbl-terraform"
+
+    workspaces {
+      name = "terraform-cloud-codes"
+    }
+  }
+}
