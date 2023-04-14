@@ -32,9 +32,9 @@ resource "aws_s3_bucket" "terraform_state" {
   )
 }
 
-data "aws_s3_bucket" "terraform_state" {
-  bucket = "manny-dev-terraform-bucket"
-}
+# data "aws_s3_bucket" "terraform_state" {
+#   bucket = "manny-dev-terraform-bucket"
+# }
 
 # terraform {
 #   backend "s3" {
