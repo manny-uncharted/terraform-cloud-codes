@@ -19,7 +19,7 @@ filters:
     - ACS-sobarqube
     - ACS-artifactory
     - ACS-Jenkins
-  instance-state-name : running
+  instance-state-name = running
   
 hostnames:
 # a list in order of precedence for hostname variables.
