@@ -26,13 +26,13 @@ environment = "dev"
 
 destination_cidr_block = "0.0.0.0/0"
 
-ami-web = "ami-00a45107f7c3455a5"
+ami-sonar = "ami-0a2ad388fe55d6e48"
 
 ami-bastion = "ami-00faed3957f8b44fd"
 
 ami-nginx = "ami-0a492843a80b976d1"
 
-ami-sonar = "ami-0f8bd95a744e074b8"
+ami-web = "ami-01afac6437b41ee45"
 
 keypair = "terraform"
 

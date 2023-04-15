@@ -17,8 +17,8 @@ packer {
 
 variable "subnet_id" {
   type    = list(string)
-  default = ["subnet-0c37ec62a43df3cc7",
-    "subnet-073461e1ff6409985"]
+  default = ["subnet-00cbf83e10e2a3784",
+    "subnet-038065fc82cc5f937"]
 }
 
 
