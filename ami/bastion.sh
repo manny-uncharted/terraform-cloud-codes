@@ -16,8 +16,7 @@ sudo echo "export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/t
 source ~/.bash_profile
 
 # clone the Ansible repo
-git clone https://github.com/darey-devops/PBL-project-19.git
-
+git clone https://github.com/manny-uncharted/terraform-cloud-codes.git
 
 # install botocore, ansible and awscli
 sudo python3 -m pip install boto
