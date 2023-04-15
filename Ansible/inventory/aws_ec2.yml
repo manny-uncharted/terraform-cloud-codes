@@ -1,5 +1,6 @@
-plugin: aws_ec2
+plugin_hosts: amazon.aws.aws_ec2
 aws_profile: default
+ansible_python_interpreter: /usr/bin/python3.9
 
 regions:
   - "us-east-1"
@@ -11,7 +12,7 @@ keyed_groups:
   prefix: tag
 
 filters:
-  tag:Name =
+  tag:Name:
     - ACS-bastion
     - ACS-nginx
     - ACS-tooling
@@ -19,7 +20,7 @@ filters:
     - ACS-sobarqube
     - ACS-artifactory
     - ACS-Jenkins
-  instance-state-name = running
+  instance-state-name : running
   
 hostnames:
 # a list in order of precedence for hostname variables.
@@ -30,7 +31,3 @@ hostnames:
 
 compose:
   ansible_host: private_ip_address
-
-
-
- 
