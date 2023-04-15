@@ -6,6 +6,15 @@ variable "region" {
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 
+packer {
+  required_plugins {
+    amazon = {
+      version = ">= 0.0.2"
+      source  = "github.com/hashicorp/amazon"
+    }
+  }
+}
+
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
 # source.
