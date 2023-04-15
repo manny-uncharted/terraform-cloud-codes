@@ -1,5 +1,5 @@
 plugin: amazon.aws.aws_ec2
-aws_profile: default
+aws_profile: Terraform
 
 regions:
   - "us-east-1"
@@ -16,7 +16,7 @@ filters:
     - ACS-nginx
     - ACS-tooling
     - ACS-wordpress
-    - ACS-sonarqube
+    - ACS-sobarqube
     - ACS-artifactory
     - ACS-Jenkins
   instance-state-name : running
