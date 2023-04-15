@@ -11,7 +11,7 @@ keyed_groups:
   prefix: tag
 
 filters:
-  tag:Name:
+  tag:Name =
     - ACS-bastion
     - ACS-nginx
     - ACS-tooling
