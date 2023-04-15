@@ -1,4 +1,4 @@
-plugin_hosts: amazon.aws.aws_ec2
+# plugin_hosts: amazon.aws.aws_ec2
 aws_profile: default
 ansible_python_interpreter: /usr/bin/python3.9
 
@@ -11,6 +11,13 @@ keyed_groups:
 - key: tags
   prefix: tag
 
+hostnames:
+# a list in order of precedence for hostname variables.
+  - private-ip-address
+  - tag:Name
+  - dns-name
+  - ip-address
+
 filters:
   tag:Name:
     - ACS-bastion
@@ -20,14 +27,8 @@ filters:
     - ACS-sobarqube
     - ACS-artifactory
     - ACS-Jenkins
-  instance-state-name : running
+  instance-state-name: running
   
-hostnames:
-# a list in order of precedence for hostname variables.
-  - private-ip-address
-  - tag:Name
-  - dns-name
-  - ip-address
 
 compose:
   ansible_host: private_ip_address
