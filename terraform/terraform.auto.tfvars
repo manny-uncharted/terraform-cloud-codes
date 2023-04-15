@@ -28,9 +28,9 @@ destination_cidr_block = "0.0.0.0/0"
 
 ami-web = "ami-00a45107f7c3455a5"
 
-ami-bastion = "ami-0dbc99375eba56ff4"
+ami-bastion = "ami-00faed3957f8b44fd"
 
-ami-nginx = "ami-010bd88cc8f5997f3"
+ami-nginx = "ami-0a492843a80b976d1"
 
 ami-sonar = "ami-0f8bd95a744e074b8"
 

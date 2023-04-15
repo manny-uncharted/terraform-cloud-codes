@@ -15,6 +15,13 @@ packer {
   }
 }
 
+variable "subnet_id" {
+  type    = list(string)
+  default = ["subnet-0c37ec62a43df3cc7",
+    "subnet-073461e1ff6409985"]
+}
+
+
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
 # source.
@@ -22,6 +29,9 @@ source "amazon-ebs" "terraform-web-prj-19" {
   ami_name      = "terraform-web-prj-19-${local.timestamp}"
   instance_type = "t2.micro"
   region        = var.region
+  vpc_id = "vpc-07de1c0bf612531a5"
+  subnet_id = var.subnet_id[1]
+  communicator = "ssh"
   source_ami_filter {
     filters = {
       name                = "RHEL-8.6.0_HVM-20220503-x86_64-2-Hourly2-GP2"
@@ -46,4 +56,5 @@ build {
   provisioner "shell" {
     script = "web.sh"
   }
+  
 }

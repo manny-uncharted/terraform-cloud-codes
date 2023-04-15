@@ -15,6 +15,12 @@ packer {
   }
 }
 
+variable "subnet_id" {
+  type    = list(string)
+  default = ["subnet-0c37ec62a43df3cc7",
+    "subnet-073461e1ff6409985"]
+}
+
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
 # source.
@@ -22,6 +28,8 @@ source "amazon-ebs" "terraform-ubuntu-prj-19" {
   ami_name      = "terraform-ubuntu-prj-19-${local.timestamp}"
   instance_type = "t2.micro"
   region        = var.region
+  vpc_id = "vpc-07de1c0bf612531a5"
+  subnet_id = var.subnet_id[0]
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
