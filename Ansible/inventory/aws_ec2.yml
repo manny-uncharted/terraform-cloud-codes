@@ -25,7 +25,7 @@ filters:
     - ACS-nginx
     - ACS-tooling
     - ACS-wordpress
-    - ACS-sobarqube
+    - ACS-sonbarqube
     - ACS-artifactory
     - ACS-Jenkins
   instance-state-name: running
