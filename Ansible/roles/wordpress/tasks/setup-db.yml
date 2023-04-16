@@ -8,7 +8,7 @@
     login_host: "terraform-20230414230142894800000010.crdwcrqpgnyb.us-east-1.rds.amazonaws.com" 
     login_user: "manny"
     login_password: "devopspbl"
-    name: mannydb
+    name: wordpressdb
     collation: utf8_general_ci
     encoding: utf8
     state: present
@@ -22,5 +22,5 @@
   loop:
     - { regexp: '^localhost', line: "terraform-20230414230142894800000010.crdwcrqpgnyb.us-east-1.rds.amazonaws.com" }
     - { regexp: '^username_here', line: "manny" }
-    - { regexp: '^database_name_here', line: "mannydb" }
+    - { regexp: '^database_name_here', line: "wordpressdb" }
     - { regexp: '^password_here', line: "devopspbl" }

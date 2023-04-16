@@ -20,7 +20,7 @@ http {
     sendfile            on;
     tcp_nopush          on;
     tcp_nodelay         on;
-    keepalive_timeout   65;
+    keepalive_timeout   100;
     types_hash_max_size 2048;
 
     
@@ -32,7 +32,7 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
      server {
-        listen       80;
+        # listen       80;
         listen       443 http2 ssl;
         listen       [::]:443 http2 ssl;
         root          /var/www/html;
